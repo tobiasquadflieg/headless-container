@@ -1,0 +1,16 @@
+lib.container =< lib.contentElement
+lib.container {
+  fields {
+    content {
+      fields {
+        items = JSON
+        items {
+          dataProcessing {
+            1 = ITplusX\HeadlessContainer\DataProcessing\ContainerProcessor
+            1.as = items
+          }
+        }
+      }
+    }
+  }
+}

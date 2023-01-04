@@ -1,0 +1,10 @@
+lib.containerWithHeader =< lib.contentElementWithHeader
+lib.containerWithHeader {
+  fields {
+    content {
+      fields {
+        items =< lib.container.fields.content.fields.items
+      }
+    }
+  }
+}
