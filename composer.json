@@ -43,6 +43,14 @@
   "replace": {
     "typo3-ter/headless-container": "self.version"
   },
+  "config": {
+    "sort-packages": true,
+    "vendor-dir": ".Build/vendor",
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    }
+  },
   "extra": {
     "branch-alias": {
       "dev-main": "0.8.x-dev"
