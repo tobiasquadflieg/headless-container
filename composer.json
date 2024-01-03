@@ -49,6 +49,8 @@
     },
     "typo3/cms": {
       "extension-key": "headless_container"
+      "web-dir": ".Build/public",
+      "app-dir": ".Build",
     }
   }
 }
