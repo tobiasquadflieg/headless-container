@@ -7,3 +7,8 @@ services:
   ITplusX\HeadlessContainer\:
     resource: '../Classes/*'
     public: true
+
+  ITplusX\HeadlessContainer\DataProcessing\ContainerProcessor:
+    tags:
+      - name: 'data.processor'
+        identifier: 'container'

@@ -6,7 +6,7 @@ lib.container {
         items = JSON
         items {
           dataProcessing {
-            1 = ITplusX\HeadlessContainer\DataProcessing\ContainerProcessor
+            1 = container
             1.as = items
           }
         }
