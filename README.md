@@ -16,16 +16,16 @@ $ composer require itplusx/headless-container
 
 ### Installation with the TYPO3 Extension Manager
 
-see: [Extension Management](https://docs.typo3.org/m/typo3/reference-coreapi/11.5/en-us/ExtensionArchitecture/HowTo/ExtensionManagement.html#extension-management)
+see: [Extension Management](https://docs.typo3.org/m/typo3/reference-coreapi/12.4/en-us/ExtensionArchitecture/HowTo/ExtensionManagement.html#installing-extensions)
 
 
 ## Requirements and compatibility
 
 | Requirement                                            | Version  |
 |--------------------------------------------------------|----------|
-| PHP                                                    | 7.4, 8.0 |
-| TYPO3                                                  | 11.5     |
-| [Headless](https://github.com/TYPO3-Headless/headless) | 3        |
+| PHP                                                    | 8.1-8.3  |
+| TYPO3                                                  | 12.4     |
+| [Headless](https://github.com/TYPO3-Headless/headless) | 4        |
 | [Container](https://github.com/b13/container)          | 2        |
 
 
