@@ -21,18 +21,18 @@ see: [Extension Management](https://docs.typo3.org/m/typo3/reference-coreapi/12.
 
 ## Requirements and compatibility
 
-| Requirement                                            | Version  |
-|--------------------------------------------------------|----------|
-| PHP                                                    | 8.1-8.3  |
-| TYPO3                                                  | 12.4     |
-| [Headless](https://github.com/TYPO3-Headless/headless) | 4        |
-| [Container](https://github.com/b13/container)          | 2        |
+| Requirement                                            | Version     |
+|--------------------------------------------------------|-------------|
+| PHP                                                    | 8.1-8.3     |
+| TYPO3                                                  | 12.4 & 13.4 |
+| [Headless](https://github.com/TYPO3-Headless/headless) | 4           |
+| [Container](https://github.com/b13/container)          | 2 & 3       |
 
 
 ## Usage
 
-1. Include TypoScript
-   _([as described by the TypoScript Reference](https://docs.typo3.org/m/typo3/reference-typoscript/11.5/en-us/UsingSetting/Entering.html#include-typoscript-from-extensions))_
+1. Include TypoScript _([as described by the TypoScript Reference](https://docs.typo3.org/m/typo3/reference-typoscript/11.5/en-us/UsingSetting/Entering.html#include-typoscript-from-extensions))_ or just add the Site Set to your Site Configuration _([as described by the Site sets
+   Reference](https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ApiOverview/SiteHandling/SiteSets.html#site-set-definition))_
 2. Register your custom container element
    _([as described by EXT:container](https://github.com/b13/container/tree/2.0.5#registration-of-container-elements))_
 3. Define TypoScript ...  
