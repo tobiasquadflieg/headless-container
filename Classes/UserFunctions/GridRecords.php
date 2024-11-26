@@ -37,7 +37,7 @@ final class GridRecords
             ->where(
                 $queryBuilder->expr()->eq(
                     'pid',
-                    $pid
+                    $queryBuilder->createNamedParameter($pid, Connection::PARAM_INT)
                 ),
                 $queryBuilder->expr()->gt(
                     'tx_container_parent',
