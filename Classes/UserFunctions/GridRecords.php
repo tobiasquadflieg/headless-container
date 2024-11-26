@@ -42,7 +42,7 @@ final class GridRecords
                 ),
                 $queryBuilder->expr()->gt(
                     'tx_container_parent',
-                    0
+                    $queryBuilder->createNamedParameter(0, Connection::PARAM_INT)
                 )
             )
             ->executeQuery();
