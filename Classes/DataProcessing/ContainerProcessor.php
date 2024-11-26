@@ -47,7 +47,7 @@ class ContainerProcessor extends \B13\Container\DataProcessing\ContainerProcesso
 
             /** @var Container $container */
             $container = $this->containerFactory->buildContainer($contentId);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return $processedData;
         }
 

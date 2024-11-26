@@ -9,6 +9,9 @@ namespace ITplusX\HeadlessContainer\UserFunctions;
  * LICENSE.md file that was distributed with this source code.
  */
 
+use Doctrine\DBAL\Exception;
+use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -20,24 +23,26 @@ final class GridRecords
      *
      * @param string $content Empty string (no content to process)
      * @param array $conf TypoScript configuration
+     * @param ServerRequestInterface $request
      * @return string Comma-separated list of colPos values associated to a grid column on the current page
-     * @throws \Doctrine\DBAL\DBALException
-     * @throws \Doctrine\DBAL\Driver\Exception
+     * @throws Exception
      */
-    public function getColPosList(string $content, array $conf): string
+    public function getColPosList(string $content, array $conf, ServerRequestInterface $request): string
     {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
+        $currentContentObject = $request->getAttribute('currentContentObject');
+        $pid = $currentContentObject->data['uid'];
         $result = $queryBuilder
-            ->select('colPos', 'tx_container_parent')
+            ->select('colPos','pid', 'tx_container_parent')
             ->from('tt_content')
             ->where(
                 $queryBuilder->expr()->eq(
                     'pid',
-                    $queryBuilder->createNamedParameter($GLOBALS['TSFE']->contentPid, \PDO::PARAM_INT)
+                    $queryBuilder->createNamedParameter($pid, Connection::PARAM_INT)
                 ),
                 $queryBuilder->expr()->gt(
                     'tx_container_parent',
-                    $queryBuilder->createNamedParameter(0, \PDO::PARAM_INT)
+                    $queryBuilder->createNamedParameter(0, Connection::PARAM_INT)
                 )
             )
             ->executeQuery();
